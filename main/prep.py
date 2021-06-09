@@ -19,3 +19,8 @@ train_labels = torch.zeros(train_data_length)
 train_set = [
     (train_data[i], train_labels[i]) for i in range(train_data_length)
 ]
+
+
+if __name__ == '__main__':
+    plt.plot(train_data[:, 0], train_data[:, 1], ".")
+    plt.show()
