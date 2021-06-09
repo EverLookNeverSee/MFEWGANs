@@ -22,3 +22,7 @@ class Discriminator(nn.Module):
             nn.Linear(64, 1),
             nn.Sigmoid()
         )
+
+    def forward(self, x):
+        output = self.model(x)
+        return output
