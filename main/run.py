@@ -52,3 +52,8 @@ for epoch in range(n_epochs):
         )
         loss_generator.backward()
         optimizer_generator.step()
+
+        # Show loss value
+        if epoch % 10 == 0 and n == batch_size - 1:
+            print(f"Epoch: {epoch} , Loss D: {loss_discriminator}")
+            print(f"Epoch: {epoch} , Loss G: {loss_generator}")
