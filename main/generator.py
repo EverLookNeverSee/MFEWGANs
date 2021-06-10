@@ -16,3 +16,7 @@ class Generator(nn.Module):
             nn.ReLU(),
             nn.Linear(32, 2)
         )
+
+    def forward(self, x):
+        output = self.model(x)
+        return output
