@@ -30,3 +30,12 @@ for epoch in range(n_epochs):
         generated_samples_labels = zeros((batch_size, 1))
         all_samples = cat((real_samples, generated_samples))
         all_samples_labels = cat((real_samples_labels, generated_samples_labels))
+
+        # Training the discriminator
+        discriminator.zero_grad()
+        output_discriminator = discriminator(all_samples)
+        loss_discriminator = loss_function(
+            output_discriminator, all_samples_labels
+        )
+        loss_discriminator.backward()
+        optimizer_discriminator.step()
