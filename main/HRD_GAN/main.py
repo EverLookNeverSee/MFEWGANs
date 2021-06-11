@@ -8,6 +8,7 @@ import torchvision
 from torch import nn
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
+from classes import Generator, Discriminator
 
 
 # Setting up seed
@@ -41,3 +42,7 @@ for i in range(16):
     plt.xticks([])
     plt.yticks([])
 plt.show()
+
+# Instantiating
+generator = Generator().to(device=device)
+discriminator = Discriminator().to(device=device)
