@@ -27,3 +27,8 @@ transform = transforms.Compose(
 train_set = torchvision.datasets.MNIST(
     root=".", train=True, download=True, transform=transform
 )
+
+batch_size = 32
+train_loader = torch.utils.data.DataLoader(
+    train_set, batch_size=batch_size, shuffle=True
+)
