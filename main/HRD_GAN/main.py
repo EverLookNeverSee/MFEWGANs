@@ -8,3 +8,7 @@ import torchvision
 from torch import nn
 import matplotlib.pyplot as plt
 import torchvision.transforms as transforms
+
+
+# Setting up seed
+torch.manual_seed(111)
