@@ -74,3 +74,14 @@ for epoch in range(n_epochs):
         loss_discriminator = loss_function(output_discriminator, all_samples_labels)
         loss_discriminator.backward()
         optimizer_discriminator.step()
+
+        # Data for training the generator
+        latent_space_samples = torch.randn((batch_size, 100)).to(device=device)
+
+        # Training the generator
+        generator.zero_grad()
+        generated_samples = generator(latent_space_samples)
+        output_discriminator_generated = discriminator(generated_samples)
+        loss_generator = loss_function(output_discriminator_generated, real_samples_labels)
+        loss_generator.backward()
+        optimizer_generator.step()
