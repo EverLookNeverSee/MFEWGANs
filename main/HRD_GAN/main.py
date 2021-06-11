@@ -46,3 +46,8 @@ plt.show()
 # Instantiating
 generator = Generator().to(device=device)
 discriminator = Discriminator().to(device=device)
+
+# Setting training parameters
+lr = 0.001
+n_epochs = 50
+loss_function = nn.BCELoss()
