@@ -23,3 +23,7 @@ else:
 transform = transforms.Compose(
     [transforms.ToTensor(), transforms.Normalize((0.5,), (0.5,))]
 )
+
+train_set = torchvision.datasets.MNIST(
+    root=".", train=True, download=True, transform=transform
+)
