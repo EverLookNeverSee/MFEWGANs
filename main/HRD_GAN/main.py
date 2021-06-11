@@ -51,3 +51,7 @@ discriminator = Discriminator().to(device=device)
 lr = 0.001
 n_epochs = 50
 loss_function = nn.BCELoss()
+
+# Configuring optimizer
+optimizer_generator = torch.optim.Adam(generator.parameters(), lr=lr)
+optimizer_discriminator = torch.optim.Adam(discriminator.parameters(), lr=lr)
