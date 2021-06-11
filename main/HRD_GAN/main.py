@@ -85,3 +85,8 @@ for epoch in range(n_epochs):
         loss_generator = loss_function(output_discriminator_generated, real_samples_labels)
         loss_generator.backward()
         optimizer_generator.step()
+
+        # Showing loss value
+        if n == batch_size - 1:
+            print(f"Epoch: {epoch} Loss D.: {loss_discriminator}")
+            print(f"Epoch: {epoch} Loss G.: {loss_generator}")
